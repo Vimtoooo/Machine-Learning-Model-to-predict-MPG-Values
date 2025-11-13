@@ -1,3 +1,11 @@
 {
-  "cSpell.ignoreWords": ["ipynb", "ipynbkernel", "scikit"]
+  "cSpell.ignoreWords": ["ipynb", "ipynbkernel", "scikit"],
+  "cSpell.words": [
+    "ipykernel",
+    "ipynbkernel",
+    "Kaggle",
+    "matplotlib",
+    "numpy",
+    "openpyxl"
+  ]
 }
