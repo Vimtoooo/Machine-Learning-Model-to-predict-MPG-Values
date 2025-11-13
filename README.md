@@ -1,5 +1,8 @@
 # Machine Learning to Predict MPG!
 
+I will be utilizing the **Car Information Dataset** found in kaggle:
+[text](https://www.kaggle.com/datasets/tawfikelmetwally/automobile-dataset/data)
+
 For this task, we will utilize the `scikit-learn` library and the coding environment will be within VS Code!
 
 ## Libraries:
@@ -14,3 +17,11 @@ For this task, we will utilize the `scikit-learn` library and the coding environ
 ## Documentation Steps:
 
 ### 1. Load the Data into a DataFrame:
+
+We will load the data by importing `pandas`, addressing the path to the `.xlsx` file and the index of the specific spreadsheet within that same file that we want to retrieve, and then we create a DataFrame.
+
+### 2. Prepare the Date:
+
+We'll prepare the data by separating the df into the `x` and `y` variables, noting that the `y` variable holds the DataFrame of only the **mpg** field, where in the other hand, the `x` stores the entire df, but not including the **mpg** field.
+
+Now, import the `scikit-learn` module to utilize the `train_test_split()` function and pass the appropriate variables to contain these models such as: `x_train`, `x_test`, `y_train`, `y_test`
