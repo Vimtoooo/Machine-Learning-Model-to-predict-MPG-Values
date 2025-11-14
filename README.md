@@ -34,5 +34,8 @@ Now, import the `scikit-learn` module to utilize the `train_test_split()` functi
 Make sure that we import the `LinearRegression()` function so that the models can be trained efficiently. However, this will be empty at first, so it its key to use the `fit()` method to pass the required arguments (which will be the `x_train` and the `y_train` models). Down below is the following syntax:
 
 ```python
+from sklearn.linear_model import LinearRegression
 
+lr = LinearRegression()
+lr.fit(x_train, y_train)
 ```

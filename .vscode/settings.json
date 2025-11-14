@@ -6,6 +6,7 @@
     "Kaggle",
     "matplotlib",
     "numpy",
-    "openpyxl"
+    "openpyxl",
+    "sklearn"
   ]
 }
