@@ -1,5 +1,7 @@
 # Machine Learning Model to Predict MPG!
 
+In this project, I will be covering a brief summary of each incremented step, leading to the complete models of prediction and statistical diagrams, such as a Scatter Plot graph. This is also my first M.L. Model build, so along the way, I will be refining and adjusting the program and the documentation for complete precision. Also, feel free to comment on how or what i should include to upgrade on this repository!
+
 I will be utilizing the **Car Information Dataset** found in kaggle:
 [car information dataset](https://www.kaggle.com/datasets/tawfikelmetwally/automobile-dataset/data)
 
