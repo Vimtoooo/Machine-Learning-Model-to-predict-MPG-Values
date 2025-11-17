@@ -95,4 +95,27 @@ lr_test_r2 = r2_score(y_test, y_lr_test_prediction)
 
 ###### Organize the Results:
 
-This part of the documentation is **OPTIONAL** if you would like to compare each model technique with their corresponding results to the training and testing models, but for best practices, I would recommend doing this complementary step.
+This part of the documentation is **OPTIONAL** only if you would like to compare each model technique with their corresponding results to the training and testing models, but for best practices, I would recommend doing this complementary step.
+
+We'll extract the results into a DataFrame called `results_df`, storing them in specific fields with adequate names like "Training MSE", "Training R2" and so on. Utilize the `DataFrame()` method from the `pandas` library when instantiating the DF.
+
+```python
+df_results = pd.DataFrame(['Linear Regression', lr_train_mse, lr_train_r2, lr_test_mse, lr_test_r2]).transpose()
+
+df_results.columns = ['Method', 'Training MSE', 'Training R2', 'Test MSE', 'Test R2']
+```
+
+- `transpose()`: Transports all of the data into the same record but in distinct fields, rather than applying them to be stored in the same column;
+- `columns`: Adds a name to each column (the order of how you passed the name of columns matter and will impact the exhibition of the results!).
+
+This makes it more convenient to visualize the generated results from each and every statistical technique and model, **allowing easy modifications and insertions** as you continue to create and utilize more techniques. Up next will be the Random Forest!
+
+#### Random Forest Regression:
+
+Slightly similar to the previous statistical technique, the overrated **random Forest Regression** wields with an **ensemble of decision trees to predict a continuous value**. It builds various individual decision trees on random subsets of the data, averaging their predictions to then, product a singular, modular and reliable result than a single tree could provide. It is worth noting that this particular approach will allow to reduce overfitting and variance, greatly improving the model performance!
+
+We will reapply the exact same prior steps of training the model, applying the predictions, evaluating and organizing our results. Furthermore, only altering the naming convention from `lr` to `rf`, meaning the **random forest** model prediction.
+
+```python
+
+```
