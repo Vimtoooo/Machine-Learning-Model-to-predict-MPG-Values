@@ -117,5 +117,47 @@ Slightly similar to the previous statistical technique, the overrated **random F
 We will reapply the exact same prior steps of training the model, applying the predictions, evaluating and organizing our results. Furthermore, only altering the naming convention from `lr` to `rf`, meaning the **random forest** model prediction.
 
 ```python
+# Train the model
+from sklearn.ensemble import RandomForestRegressor
+rf = RandomForestRegressor(max_depth=2, random_state=100)
+rf.fit(x_train, y_train)
 
+# Apply the predictions
+y_rf_train_prediction = rf.predict(x_train)
+y_rf_test_prediction = rf.predict(x_test)
+
+# Evaluate the model performance by calculating the MSE and r2
+# Training set results
+rf_train_mse = mean_squared_error(y_train, y_rf_train_prediction)
+rf_train_r2 = r2_score(y_train, y_rf_train_prediction)
+
+# Test set results
+rf_test_mse = mean_squared_error(y_test, y_rf_test_prediction)
+rf_test_r2 = r2_score(y_test, y_rf_test_prediction)
+
+# Build the DF
+rf_results = pd.DataFrame(['Random Forest', rf_train_mse, rf_train_r2, rf_test_mse, rf_test_r2]).transpose()
+
+# Name each field correctly
+rf_results.columns = ['Method', 'Training MSE', 'Training R2', 'Test MSE', 'Test R2']
 ```
+
+##### Important Methods and Optional Keywords:
+
+- `RandomForestRegressor()`: Instantiates the random forest instance to construct the model;
+- `max_depth` and `random_state`: Optional keyword arguments that will remain with the same values as the `LinearRegressor()` model to keep the model modular;
+
+### 4. Justify a Model Comparison:
+
+One of the main reasons why we include a model comparison is because of how we can evaluate objectively how each well each model performed during specific tasks, then we can identify the best model for deployment, but also, to understand the **strengths and weaknesses** to determine the optimal resource allocation, which helps determine which model provides the best trade-off between performance and efficiency.
+
+We will concatenate both, the **linear regression** and the **random forest models** into a singular DataFrame for simple data analysis, while also fixing some issues under the way:
+
+```python
+df_models = pd.concat([df_results, rf_results], axis=0)
+
+df_models.reset_index(drop=True) # This resets and fixes the index exhibition
+```
+
+- `concat()`: Merges two or more DataFrames into a single DF, while the `axis=0` will be row based!
+- `reset_index()`: Resets the index column at the left side (indicates the number of records in the DF, in indexes), noting that the `drop=True` will eliminate the `index` column name to be set above the indexing.
