@@ -1,6 +1,7 @@
 {
   "cSpell.ignoreWords": ["ipynb", "ipynbkernel", "scikit"],
   "cSpell.words": [
+    "AUCROC",
     "ipykernel",
     "ipynbkernel",
     "Kaggle",
@@ -8,6 +9,7 @@
     "numpy",
     "openpyxl",
     "overfitting",
+    "RMSE",
     "sklearn",
     "underfitting"
   ]

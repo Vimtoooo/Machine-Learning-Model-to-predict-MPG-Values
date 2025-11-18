@@ -161,3 +161,30 @@ df_models.reset_index(drop=True) # This resets and fixes the index exhibition
 
 - `concat()`: Merges two or more DataFrames into a single DF, while the `axis=0` will be row based!
 - `reset_index()`: Resets the index column at the left side (indicates the number of records in the DF, in indexes), noting that the `drop=True` will eliminate the `index` column name to be set above the indexing.
+
+#### Model Performance Evaluation:
+
+During the comparison of the evaluation, we may encounter various lesser or rather, greater **gaps of results** when comparing two or multiple records of the same filed, but from different statistical techniques (such as the linear and random forest regressors). The difference in their **generalization performance** on unseen data is often referred to as the **performance gap** or **model performance difference**. Let's break this down into difference segments.
+
+In the summoning of results in specific metrics can most likely vary in value, definition and purpose, so this is one way to judge a model on how well they have performed, based on its value:
+
+##### Metrics where a Smaller Value is Better:
+
+For metrics that are focussed on measuring **error, loss or distance** are optimized by **minimizing their value**, where a result closer to zero is considered better:
+
+- **Mean Squared Error (MSE)**;
+- **Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE)**.
+
+In our merged DF, the training MSE for `linear regression` has prompted a slight smaller result compared to the `random forest regression`, with a difference of approximately ~
+
+##### Metrics where a Larger Value is Better:
+
+In the other hand, metrics that measure **goodness-of-fit, accuracy, or explanatory power** are optimized by **maximizing their value**. A result closer to one (or 100%) is better:
+
+- **R-Squared Score**;
+- **Accuracy**;
+- **Area Under the ROC Curve (AUCROC)**.
+
+##### Comparing the Test and Training set Results:
+
+Verifying both the test and training set results can also be considered, a way to determine how well a model has performed. By analyzing the scores of these sets can help indicate and diagnose the **performance issues**, if it's overfitting or underfitting, ensuring that the model is likely to perform reliably on new, unseen data in the real world.
