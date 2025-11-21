@@ -192,3 +192,16 @@ Once again, within the `df_models` DataFrame, in the **Training R2**, the `linea
 
 Verifying both the test and training set results can also be considered, a way to determine how well a model has performed. By analyzing the scores of these sets can help indicate and diagnose the **performance issues**, if it's overfitting or underfitting, ensuring that the model is likely to perform reliably on new, unseen data in the real world.
 
+#### Construct a Scatter Plot Diagram for Data Visualization:
+
+At last, we will need to build a **data visualization graph**, and for this case, it's best to utilize a **scatter plot diagram** where we will be able to visualize all of the data that has been distributed for further analytics, identifying outlier and so on.
+
+##### TODO List:
+
+* Use a Scatter Plot Diagram (`matplotlib.pyplot` in particular);
+* A trend line (`numpy`);
+* Coloring and dimension defining;
+* Appropriate x and y-axis labelling;
+* Insert the `y_train` and `y_lr_train_prediction` variables for analysis;
+* **(OPTIONAL)** Create a distinct graph with `y_rd_train_prediction` variable!
+
