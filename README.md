@@ -175,7 +175,8 @@ For metrics that are focussed on measuring **error, loss or distance** are optim
 - **Mean Squared Error (MSE)**;
 - **Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE)**.
 
-In our merged DF, the training MSE for `linear regression` has prompted a slight smaller result compared to the `random forest regression`, with a difference of approximately ~
+In our merged DF, the training MSE for `linear regression` has prompted a slight smaller result compared to the `random forest regression`, with a difference of approximately ~0.3666. However, the test MSE for `random forest` has obtained a much larger difference, compared to the `linear regression` which holds a much precise result, with a wapping difference of ~2.596999.
+To condense the statistics, the Random forest regression generally yields a **lower Mean Squared Error (MSE) and better predictive performance** than linear regression!
 
 ##### Metrics where a Larger Value is Better:
 
@@ -185,6 +186,9 @@ In the other hand, metrics that measure **goodness-of-fit, accuracy, or explanat
 - **Accuracy**;
 - **Area Under the ROC Curve (AUCROC)**.
 
+Once again, within the `df_models` DataFrame, in the **Training R2**, the `linear regression` collected a larger result than the `random forest`, with a difference of ~0.005855. Even though, in the **test R2**, the `random forest` has generated a higher result than its rival, difference of ~0.049144. Overall, both models have preformed and brought concise results to the table, indicating that these statistical techniques can be used for this particular task, but it is worth mentioning that the `linear regression` can out perform other models if the **true relationship between variables is linear**, but if it were the opposite, the `random forest` would easily out perform the `linear regression` (such as complex or non-linear relationship).
+
 ##### Comparing the Test and Training set Results:
 
 Verifying both the test and training set results can also be considered, a way to determine how well a model has performed. By analyzing the scores of these sets can help indicate and diagnose the **performance issues**, if it's overfitting or underfitting, ensuring that the model is likely to perform reliably on new, unseen data in the real world.
+
