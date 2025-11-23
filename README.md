@@ -205,3 +205,48 @@ At last, we will need to build a **data visualization graph**, and for this case
 * Insert the `y_train` and `y_lr_train_prediction` variables for analysis;
 * **(OPTIONAL)** Create a distinct graph with `y_rd_train_prediction` variable!
 
+```python
+# Import the necessary libraries
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create the scatter plot diagram
+plt.figure(figsize=(5, 5)) # Defined dimension
+plt.scatter(y_lr_train_prediction, y_train, color='#7A00B2', alpha=0.3) # Insert the data
+
+# Construct the trend line
+z = np.polyfit(y_lr_train_prediction, y_train, 1) # Pass the coordinates and the support index
+p = np.poly1d(z)
+
+# Create points for smooth trend line
+x_lr_trend = np.linspace(min(y_lr_train_prediction), max(y_lr_train_prediction), 50)
+y_lr_trend = p(x_lr_trend)
+
+# Label the X and Y-axis
+plt.plot(x_lr_trend, y_lr_trend, "#23AED4", linewidth=2) # Hides the memory address of the graph and insert a color for the trend line
+plt.xlabel('Predict MPG')
+plt.ylabel('Experimental MPG')
+
+# Add perfect prediction line for reference (y=x line)
+plt.plot([min(y_train), max(y_train)], [min(y_train), max(y_train)], 
+         '--', color='red', label='Perfect Prediction')
+
+plt.legend()
+plt.title('Predicted vs Experimental MPG with LR')
+plt.grid(True, alpha=0.3)
+
+plt.show()
+```
+
+#### Libraries & Methods:
+
+- `matplotlib.pyplot` (`plt`): Module to construct graphs, plots and visualization;
+- `numpy` (`np`): Module to handle a series of data (and to define the trend line with appropriate numerical data), but mainly used for numerical operations, especially array and polynomial fitting;
+- `plt.figure()`: Pass the measurements for the graph;
+- `plt.scatter()`: Inserts the data within the matching MPG measurements, with an addition to customization;
+- `np.polyfit()`: Fits a straight line (a degree 1 polynomial) the the data for trend analysis;
+- `np.linspace()`: Generates evenly spaced values for the trend line;
+- `plt.plot()`: Draws the trend line and the perfect prediction reference line (where the prediction equals to the actual);
+- `plt.xlabel()`, `plt.ylabel()` and `plt.title()`: Labels the axis and the plot name;
+- `plt.legend()`: Shows the legend for the reference line;
+- `plt.grid(True, alpha=0.3)`: Adds a light grid for readability.

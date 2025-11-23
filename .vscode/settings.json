@@ -11,6 +11,7 @@
     "ipykernel",
     "ipynbkernel",
     "Kaggle",
+    "linspace",
     "matplotlib",
     "numpy",
     "openpyxl",
